@@ -12,14 +12,14 @@ use function Psl\Vec\filter;
  * @template U
  * @template V
  *
- * @param U[] $nextItems
- * @param V[] $currentItems
+ * @param iterable<U> $nextItems
+ * @param iterable<V> $currentItems
  * @param callable(U, V):bool $comparator
  * @param callable(U, V):bool $eqCallback
  *
  * @return DifferResults<U, V>
  */
-function diff(array $nextItems, array $currentItems, callable $comparator, callable $eqCallback): DifferResults
+function diff(iterable $nextItems, iterable $currentItems, callable $comparator, callable $eqCallback): DifferResults
 {
     $toCreate = filter($nextItems,
         /** @param U $u */
