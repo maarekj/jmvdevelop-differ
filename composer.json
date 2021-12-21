@@ -1,0 +1,32 @@
+{
+  "name": "jmvdevelop/differ",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "JmvDevelop\\Differ\\": "src/"
+    },
+    "files": [
+      "src/diff.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JmvDevelop\\Differ\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Joseph Maarek",
+      "email": "josephmaarek@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "azjezz/psl": "^1.9"
+  },
+  "require-dev": {
+    "vimeo/psalm": "^4.15",
+    "phpunit/phpunit": "^9.5",
+    "php-standard-library/psalm-plugin": "^1.1"
+  }
+}
