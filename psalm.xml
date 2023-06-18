@@ -5,6 +5,8 @@
         xmlns="https://getpsalm.org/schema/config"
         xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
         hideExternalErrors="true"
+        findUnusedBaselineEntry="true"
+        findUnusedCode="true"
 >
     <projectFiles>
         <directory name="src"/>
@@ -59,6 +61,7 @@
 
         <UnusedClosureParam errorLevel="info"/>
         <UnusedVariable errorLevel="info"/>
+        <UnusedClass errorLevel="info"/>
 
         <Trace errorLevel="error"/>
     </issueHandlers>

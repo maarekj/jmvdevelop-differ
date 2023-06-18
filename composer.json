@@ -22,11 +22,11 @@
   ],
   "require": {
     "php": ">=8.0",
-    "azjezz/psl": "^1.9"
+    "azjezz/psl": "^2.6"
   },
   "require-dev": {
-    "vimeo/psalm": "^4.15",
-    "phpunit/phpunit": "^9.5",
-    "php-standard-library/psalm-plugin": "^1.1"
+    "phpunit/phpunit": "^9.6",
+    "vimeo/psalm": "^5.12",
+    "php-standard-library/psalm-plugin": "^2.2"
   }
 }

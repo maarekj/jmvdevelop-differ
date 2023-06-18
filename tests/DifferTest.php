@@ -10,7 +10,7 @@ use function JmvDevelop\Differ\diff;
  */
 final class DifferTest extends TestCase
 {
-    public function testDiff()
+    public function testDiff(): void
     {
         /** @var list<UserType> $original */
         $original = [
@@ -68,7 +68,7 @@ final class DifferTest extends TestCase
         ], $results->toStay());
     }
 
-    public function testDiff_withDifferentTypes()
+    public function testDiff_withDifferentTypes(): void
     {
         $original = [
             $this->user(1, 'joseph', '1'),

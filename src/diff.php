@@ -12,8 +12,8 @@ use function Psl\Vec\filter;
  * @template U
  * @template V
  *
- * @param iterable<U> $nextItems
- * @param iterable<V> $currentItems
+ * @param iterable<U>         $nextItems
+ * @param iterable<V>         $currentItems
  * @param callable(U, V):bool $comparator
  * @param callable(U, V):bool $eqCallback
  *
@@ -21,19 +21,23 @@ use function Psl\Vec\filter;
  */
 function diff(iterable $nextItems, iterable $currentItems, callable $comparator, callable $eqCallback): DifferResults
 {
-    $toCreate = filter($nextItems,
+    $toCreate = filter(
+        $nextItems,
         /** @param U $u */
-        fn($u): bool => !any($currentItems,
+        fn ($u): bool => !any(
+            $currentItems,
             /** @param V $v */
-            fn($v) => $comparator($u, $v)
+            fn ($v) => $comparator($u, $v)
         )
     );
 
-    $toDelete = filter($currentItems,
+    $toDelete = filter(
+        $currentItems,
         /** @param V $v */
-        fn($v): bool => !any($nextItems,
+        fn ($v): bool => !any(
+            $nextItems,
             /** @param U $u */
-            fn($u) => $comparator($u, $v)
+            fn ($u) => $comparator($u, $v)
         )
     );
 
@@ -41,12 +45,13 @@ function diff(iterable $nextItems, iterable $currentItems, callable $comparator,
         $nextItems,
         /** @param U $u */
         function ($u) use ($currentItems, $comparator, $eqCallback): bool {
-            $currentItem = search($currentItems,
+            $currentItem = search(
+                $currentItems,
                 /** @param V $v */
-                fn($v) => $comparator($u, $v)
+                fn ($v) => $comparator($u, $v)
             );
 
-            if ($currentItem === null) {
+            if (null === $currentItem) {
                 return false;
             } else {
                 return $eqCallback($u, $currentItem);
@@ -58,12 +63,13 @@ function diff(iterable $nextItems, iterable $currentItems, callable $comparator,
         $nextItems,
         /** @param U $u */
         function ($u) use ($currentItems, $comparator, $eqCallback): bool {
-            $currentItem = search($currentItems,
+            $currentItem = search(
+                $currentItems,
                 /** @param V $v */
-                fn($v) => $comparator($u, $v)
+                fn ($v) => $comparator($u, $v)
             );
 
-            if ($currentItem === null) {
+            if (null === $currentItem) {
                 return false;
             } else {
                 return !$eqCallback($u, $currentItem);

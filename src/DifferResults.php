@@ -21,8 +21,7 @@ final class DifferResults
         private array $toDelete,
         private array $toStay,
         private array $toUpdate
-    )
-    {
+    ) {
     }
 
     /** @return list<U> */
